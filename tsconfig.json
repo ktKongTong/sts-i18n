@@ -6,10 +6,10 @@
       "path": "apps/demo"
     },
     {
-      "path": "packages/sts-18n-react"
+      "path": "packages/sts-i18n-react"
     },
     {
-      "path": "packages/sts-18n"
+      "path": "packages/sts-i18n"
     }
     // ... more
   ]

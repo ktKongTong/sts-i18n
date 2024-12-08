@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup  && tsc",
-    "dts": "tsc"
+    "dts": "tsc",
+    "publish": ""
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "exports": {
     "." : {
       "types": "./dist/types/index.d.ts",
@@ -15,7 +23,13 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "keywords": [],
+
+  "keywords": [
+    "simple-i18n",
+    "i18n",
+    "typesafe",
+    "typescript"
+  ],
   "author": "ktkongtong",
   "license": "MIT",
   "dependencies": {

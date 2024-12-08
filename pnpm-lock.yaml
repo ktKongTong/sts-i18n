@@ -24,9 +24,6 @@ importers:
       '@eslint/js':
         specifier: ^9.15.0
         version: 9.16.0
-      '@ktfun/sts-i18n':
-        specifier: workspace:*
-        version: link:../../packages/sts-i18n
       '@ktfun/sts-i18n-react':
         specifier: workspace:*
         version: link:../../packages/sts-18n-react

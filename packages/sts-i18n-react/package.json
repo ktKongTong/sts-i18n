@@ -7,13 +7,25 @@
     "build": "tsup && tsc",
     "dts": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "i18n",
+    "typesafe",
+    "i18n-react"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+
   "author": "ktkongtong",
   "license": "MIT",
   "dependencies": {
     "@ktfun/sts-i18n": "workspace:*"
   },
-
 
   "exports": {
     "." : {
