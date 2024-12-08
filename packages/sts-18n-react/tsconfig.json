@@ -1,0 +1,17 @@
+{
+
+  "extends": "../../tsconfig.options.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "outDir": "./dist/types",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../sts-i18n"
+    }
+  ]
+}
