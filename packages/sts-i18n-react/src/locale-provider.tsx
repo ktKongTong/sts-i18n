@@ -1,10 +1,16 @@
 import {createContext,  useContext, useState, Dispatch, SetStateAction} from "react";
 import  React from 'react'
-export const localeCtxFactory = <Locale extends string, DefaultLocale extends Locale>(availableLocales:Locale[], defaultLocale?: DefaultLocale) => {
+export const localeCtxFactory = <
+  Locale extends string,
+  DefaultLocale extends Locale
+>(
+  availableLocales:Locale[],
+  defaultLocale?: DefaultLocale
+) => {
 
   const userLocale = navigator.language
-  const _defaultLocale = (defaultLocale ? defaultLocale :
-    availableLocales.some(l => l === userLocale) ? userLocale : availableLocales[0]) as DefaultLocale
+  const _defaultLocale = defaultLocale ? defaultLocale :
+    availableLocales.find(l => l === userLocale) ?? availableLocales[0]
 
   const localeCtx = createContext<{
     locale: Locale,
@@ -15,9 +21,7 @@ export const localeCtxFactory = <Locale extends string, DefaultLocale extends Lo
   })
 
   const Provider = localeCtx.Provider
-  const  LocaleProvider = (
-    {children}: any
-  ) => {
+  const  LocaleProvider = ({children}: {children: React.ReactNode}) => {
     const [locale, setLocale] = useState<Locale>(_defaultLocale)
     return <Provider value={{ locale, setLocale }}>{children}</Provider>
   }
@@ -36,5 +40,6 @@ export const localeCtxFactory = <Locale extends string, DefaultLocale extends Lo
     Provider: Provider,
     LocaleProvider,
     useLocale,
+    defaultLocale: _defaultLocale
   }
 }

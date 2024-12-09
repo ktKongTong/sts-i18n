@@ -1,16 +1,18 @@
 {
   "name": "@ktfun/sts-i18n-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "react adapter for sts-i18n",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup && tsc",
-    "dts": "tsc"
+    "build": "tsup"
   },
+  "repository":"https://github.com/ktkongtong/sts-i18n",
   "keywords": [
     "react",
     "i18n",
     "typesafe",
+    "sts-i18n",
+    "simple-i18n",
+    "sts-i18n-react",
     "i18n-react"
   ],
   "publishConfig": {
@@ -49,6 +51,12 @@
   "devDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "jsdom": "^25.0.1",
+    "vitest": "^2.1.8",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/dom": "^10.4.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   }

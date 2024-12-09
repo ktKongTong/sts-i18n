@@ -10,17 +10,22 @@ export function createTrans<
   Locale extends MString<keyof M>,
   DefaultLocale extends Locale
 >(
-    transMap: M,
-    defaultLocale: DefaultLocale
-  ) {
+  transMap: M,
+  defaultLocale?: DefaultLocale
+) {
     const availableLocales = Object.keys(transMap) as Locale[]
-    const { useLocale , LocaleProvider, localeCtx }= localeCtxFactory<Locale, DefaultLocale>(availableLocales, defaultLocale)
+    const {
+      useLocale,
+      LocaleProvider,
+      localeCtx,
+      defaultLocale: _defaultLocale
+    }= localeCtxFactory<Locale, DefaultLocale>(availableLocales, defaultLocale)
     const getLocale = () => {
       return useLocale().locale
     }
     const useTrans = _createTrans<M,Locale, DefaultLocale, M[DefaultLocale]>(
       transMap,
-      defaultLocale,
+      _defaultLocale as DefaultLocale,
       getLocale
     )
     return {

@@ -21,8 +21,9 @@ export type ContainsDot<T extends string> = T extends `${infer _}.${infer _}` ? 
 //   ContainsDot<Rest> extends true ? `${P}.${Prefix<Rest>}` : P | ''
 //   : never);
 
-export type Prefix<T extends string, P extends string = ''> = (T extends `${infer P}.${infer Rest}` ? P | DotConcat<P, Prefix<Rest, P>> : never)
+export type _Prefix<T extends string> = (T extends `${infer P}.${infer Rest}` ? P | DotConcat<P, _Prefix<Rest>> : never)
 
+export type Prefix<T extends string> = _Prefix<T> | ''
 /**
  *  extract all possible prefix (split with dot) from string union, always include '';
  *  @example

@@ -8,7 +8,6 @@
     "rootDir": "src"
   },
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.ts"],
   "references": [
     {
       "path": "../sts-i18n"

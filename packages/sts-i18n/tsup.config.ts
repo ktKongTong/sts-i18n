@@ -3,7 +3,15 @@ import { defineConfig, Options } from 'tsup'
 // @ts-ignore
 export default defineConfig((options) => {
   const commonOptions: Partial<Options> = {
-    entry: ['src/**/*.[jt]s', '!src/**/*.spec.ts'],
+    entry: [
+      'src/**/*.[jt]s',
+      'src/**/*.[jt]sx',
+      '!./src/**/*.d.ts',
+      '!./src/**/*.test.[jt]s',
+      '!./src/**/*.spec.[jt]s',
+      '!./src/**/*.test.[jt]sx',
+      '!./src/**/*.spec.[jt]sx'
+    ],
     platform: 'node',
     target: 'node16',
     splitting: false,
@@ -13,18 +21,23 @@ export default defineConfig((options) => {
     ...options,
   }
   return [
+    // types
+    {
+      ...commonOptions,
+      outDir: './dist/types/',
+      dts: {
+        only: true
+      }
+    },
     {
       ...commonOptions,
       format: ['esm'],
-      clean: true,
       outDir: './dist/esm/',
       bundle: false,
       dts: false
     },
-    // CJS
     {
       ...commonOptions,
-      clean: true,
       format: ['cjs'],
       outDir: './dist/cjs/',
     },

@@ -1,16 +1,20 @@
 {
   "name": "sts-i18n-monorepo",
   "version": "0.1.0",
-  "description": "another simple typesafe i18n tools",
+  "description": "yet another typesafe i18n tools --simple typesafe i18n",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ci:publish": "pnpm -r publish --no-git-checks",
+    "build:deps": "pnpm --filter='@ktfun/sts*' build",
+    "dev:demo": "pnpm --filter='demo' dev",
+    "test": "pnpm -r test"
   },
+  "repository":"https://github.com/ktkongtong/sts-i18n",
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab",
   "dependencies": {
     "typescript": "^5.7.2"
-  }
+  },
+  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }

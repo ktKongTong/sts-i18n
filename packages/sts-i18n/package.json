@@ -1,14 +1,13 @@
 {
   "name": "@ktfun/sts-i18n",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "another simple typesafe i18n tools",
-  "main": "index.js",
+  "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup  && tsc",
-    "dts": "tsc",
-    "publish": ""
+    "build": "tsup",
+    "test": "vitest -w=false"
   },
+  "repository":"https://github.com/ktkongtong/sts-i18n",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -23,7 +22,6 @@
       "require": "./dist/cjs/index.js"
     }
   },
-
   "keywords": [
     "simple-i18n",
     "i18n",
@@ -33,9 +31,11 @@
   "author": "ktkongtong",
   "license": "MIT",
   "dependencies": {
+
   },
   "devDependencies": {
     "tsup": "^8.3.5",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }
