@@ -1,3 +1,4 @@
+'use client'
 import {createTrans as _createTrans} from "@ktfun/sts-i18n";
 import {localeCtxFactory} from "./locale-provider";
 import type {Tran} from "@ktfun/sts-i18n";

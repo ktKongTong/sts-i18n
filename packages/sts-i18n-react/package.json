@@ -1,6 +1,6 @@
 {
   "name": "@ktfun/sts-i18n-react",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react adapter for sts-i18n",
   "scripts": {
     "build": "tsup"
