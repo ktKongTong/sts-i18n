@@ -8,7 +8,7 @@ export const localeCtxFactory = <
   defaultLocale?: DefaultLocale
 ) => {
 
-  const userLocale = navigator.language
+  const userLocale = navigator?.language
   const _defaultLocale = defaultLocale ? defaultLocale :
     availableLocales.find(l => l === userLocale) ?? availableLocales[0]
 
